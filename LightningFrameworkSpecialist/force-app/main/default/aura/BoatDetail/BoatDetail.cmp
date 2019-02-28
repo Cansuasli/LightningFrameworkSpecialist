@@ -21,7 +21,7 @@
         </aura:set>
         <lightning:layout multipleRows="true">
             <lightning:layoutItem size="6">
-                <div class="slds-p-horizontal--small">
+                <div class="slds-p-horizontal__small">
                     <!--Display the boat detail-->
                     <div class="boatproperty">
                         <span class="label">Boat Name:</span>
