@@ -1,0 +1,29 @@
+<aura:component description="BoatSearchForm"
+        controller="BoatSearchFormController"
+        implements="flexipage:availableForAllPageTypes" access="global" >
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="boatTypes" type="BoatType__c[]" description="List of Boat Type names"/>
+    <lightning:layout horizontalAlign="center" verticalAlign="end">
+        <!--Boat Types Drop-down-->
+        <lightning:layoutItem class="slds-m-right_small">
+            <lightning:select aura:id="boatTypesSelect" label="Boat Types">
+                <option value="">All Types</option>
+                <aura:iteration items="{!v.boatTypes}" var="boat">
+                    <option value="{!boat.Id}">{!boat.Name}</option>
+                </aura:iteration>
+            </lightning:select>
+        </lightning:layoutItem>
+        <!--Boat Types Drop-down-->
+
+        <!--Search Button-->
+        <lightning:layoutItem class="slds-m-right_x-small">
+            <lightning:button variant="brand" label="Search"/>
+        </lightning:layoutItem>
+        <!--Search Button-->
+        <aura:if isTrue="{!v.renderNewButton}">
+        <lightning:layoutItem class="slds-m-right_x-small">
+            <lightning:button variant="neutral" label="New" /> <!--onclick="{!c.onNew}"-->
+        </lightning:layoutItem>
+        </aura:if>
+    </lightning:layout>
+</aura:component>
