@@ -27,7 +27,7 @@
     },
     onSelectChange : function (component, event, helper) {
         //Get the value of option in Boat Type drop-down and set it in attribute
-        var boatType = component.find('boatTypesSelect').get('v.value')
+        var boatType = component.find('boatTypesSelect').get('v.value');
         component.set('v.boatType', boatType);
         console.log(component.get('v.boatType'));
     },
@@ -36,6 +36,7 @@
         var boatTypeId = component.get('v.boatType');
         var formsubmit = component.getEvent("formsubmit");
         //Set boatTypeId as a paremeter
+        console.log('BURADASIN onFormSubmit' + boatTypeId);
         formsubmit.setParams({
             'formData' : {
                 'boatTypeId' : boatTypeId

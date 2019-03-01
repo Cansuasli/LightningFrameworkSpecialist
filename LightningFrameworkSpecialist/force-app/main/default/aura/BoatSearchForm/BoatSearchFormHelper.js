@@ -1,24 +1,19 @@
 ({
     getBoatTypeNames : function(component) {
         //Set Action Name on Aura Controller and its parameters
-        var actionName = 'getBoatTypeNames';
-        var params = {};
-
-        //Call N3Service apexRequest method, define response handler, and catch handler
-        this.apexRequest(component, actionName, params)
-            .then(this.handleGetBoatTypeNamesResponse(component))
-            .catch(this.handleError(component));
-
-	},
-    handleGetBoatTypeNamesResponse : function (component) {
-        return $A.getCallback(function (response) {
+        var action = component.get('c.getBoatTypeNames');
+        action.setCallback(this, function(response) {
             console.log(response)
-            //Set Boat Type Names in aura attribute
-            var boatTypes = response;
-            component.set('v.boatTypes', boatTypes)
-            console.log(component.get('v.boatTypes'))
-        }.bind(this));
-    },
+            if(response.getState() === 'SUCCESS') {
+                console.log('BURADASIN '+ 'Response is : %O' , response.getReturnValue());
+				component.set("v.boatTypes", response.getReturnValue());
+            } else {
+                //If error, use handleError method
+                this.handleError(component);
+            }
+        });
+        $A.enqueueAction(action);
+	},
     handleError : function (component) {
         return $A.getCallback(function (error) {
             //Log error and display toast

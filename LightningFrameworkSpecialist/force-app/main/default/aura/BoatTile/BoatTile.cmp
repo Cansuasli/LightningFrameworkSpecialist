@@ -17,12 +17,12 @@
     <lightning:button class="{! v.selected ? 'tile selected' : 'tile'}" onclick="{!c.onBoatClick}">
 
         <!--Render Boat Picture as tile background-->
-        
+        <div style="{! 'background-image:url(' + v.boat.Picture__c + ');' }" class="innertile">
             <div class="lower-third">
                 <!--Display Contact Lookup Name-->
                 <h1 class="slds-truncate">{!v.boat.Contact__r.Name}</h1>
             </div>
-        
+        </div>
     </lightning:button>
     <!--Boat Tile-->
 

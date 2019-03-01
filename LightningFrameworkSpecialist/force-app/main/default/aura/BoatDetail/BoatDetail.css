@@ -1,4 +1,3 @@
-
 .THIS.label {
     font-weight: bold;
     display: block;
@@ -13,4 +12,5 @@
     background-size: contain;
     height: 200px;
     margin: 2px;
+    background-image: url("' + v.boat.Picture__c + '");
 }

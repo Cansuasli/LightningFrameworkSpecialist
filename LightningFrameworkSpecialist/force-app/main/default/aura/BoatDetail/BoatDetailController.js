@@ -11,5 +11,5 @@
             "slideDevName": "detail"
         });
         navEvt.fire();
-    }
+    },
 })

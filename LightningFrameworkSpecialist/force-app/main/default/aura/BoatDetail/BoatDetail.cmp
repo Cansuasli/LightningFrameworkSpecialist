@@ -39,7 +39,6 @@
                     <div class="boatproperty">
                         <span class="label">Est. Price:</span>
                         <!--Use lightning:formattedNumber to display the boat price in currency format-->
-                        <!--style="currency" style for lightning formatter-->
                         <span><lightning:formattedNumber value="{!v.boat.Price__c}"  currencyCode="USD"/></span>
                     </div>
                     <div class="boatproperty">
@@ -51,8 +50,7 @@
             </lightning:layoutItem>
             <lightning:layoutItem size="6">
                 <!--Display the boat picture in a separate column-->
-                <!--style="{! 'background-image:url(' + v.boat.Picture__c + ');' }"  style for image class-->
-                <div class="imageview" />
+                <div class="imageview" id="imageview"/>
             </lightning:layoutItem>
         </lightning:layout>
     </lightning:card>

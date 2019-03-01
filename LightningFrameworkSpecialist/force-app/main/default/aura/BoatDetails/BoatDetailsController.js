@@ -18,5 +18,5 @@
         tabset.set('v.selectedTabId', 'boatreviewtab');
         //Reload boatReviews with new records
         component.find('boatReviews').refresh();
-    }
+    },
 })
