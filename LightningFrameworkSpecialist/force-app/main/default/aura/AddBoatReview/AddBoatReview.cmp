@@ -22,7 +22,12 @@
             <lightning:inputRichText value="{!v.boatReview.Comment__c}" disabledCategories="FORMAT_FONT"/>
         </lightning:layoutItem>
         
-        <lightning:layoutItem size="12" class="slds-align--absolute-center">
+        <lightning:layoutItem size="12" padding="around-small">
+            <label class="slds-text-title">Rating</label>
+            <c:FiveStarRating value="{!v.boatReview.Rating__c}" readonly="false"/>
+        </lightning:layoutItem>
+
+        <lightning:layoutItem size="12" padding="around-small">
             <lightning:button iconName="utility:save" label="Submit" onclick="{!c.onSave}"/>
         </lightning:layoutItem>
     </lightning:layout>
