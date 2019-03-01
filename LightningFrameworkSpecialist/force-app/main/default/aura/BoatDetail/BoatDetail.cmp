@@ -21,7 +21,7 @@
         </aura:set>
         <lightning:layout multipleRows="true">
             <lightning:layoutItem size="6">
-                <div class="slds-p-horizontal__small">
+                <div class="slds-p-horizontal--small">
                     <!--Display the boat detail-->
                     <div class="boatproperty">
                         <span class="label">Boat Name:</span>
@@ -50,7 +50,7 @@
             </lightning:layoutItem>
             <lightning:layoutItem size="6">
                 <!--Display the boat picture in a separate column-->
-                <div class="imageview" id="imageview"/>
+                <div class="imageview"/>
             </lightning:layoutItem>
         </lightning:layout>
     </lightning:card>

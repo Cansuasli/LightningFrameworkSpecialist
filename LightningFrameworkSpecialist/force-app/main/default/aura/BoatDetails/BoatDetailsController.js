@@ -1,4 +1,4 @@
-({
+/*({
     onBoatSelected : function (component, event, helper) {
         //Retrieve the boat fired from the event onClick
         var boat = event.getParam('boat');
@@ -19,4 +19,18 @@
         //Reload boatReviews with new records
         component.find('boatReviews').refresh();
     },
+})*/
+
+({
+    onBoatSelected : function(component, event, helper) {
+        var boatSelected=event.getParam("boat");
+        component.set("v.id",boatSelected.Id);
+        component.find("service").reloadRecord() ;
+    },
+    onRecordUpdated : function(component, event, helper) {
+    },
+    onBoatReviewAdded : function(component, event, helper) {
+        console.log("Event received");
+        component.set("v.selTabId", "boatreviewtab");
+    }
 })
